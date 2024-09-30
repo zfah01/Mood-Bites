@@ -16,7 +16,6 @@ Enter "cd backend" then "node server.js"
 Enter "npm start"
 
 ## Application Flow:
-
 Sign Up or Login
 Search for Recipes, Ingredients, Dietary Requirements etc
 Select a Mood to receive recipes recommended based on mood. 
