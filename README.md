@@ -2,6 +2,8 @@
 
 MoodBites is a web application that leverages the Spoonacular API to provide personalized recipe recommendations based on user preferences such as cuisine, dietary restrictions, and specific ingredients. In addition to discovering new dishes, users can track their mood, with the app offering mood-based recipe suggestions. Users can also save their favorite recipes and access detailed step-by-step instructions for each dish.
 
+## The application is hosted on Netlify (to run click the link below):
+https://moodbites.netlify.app
 ## To run (locally):
 
 Clone the repository:
