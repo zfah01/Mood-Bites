@@ -4,11 +4,10 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import Modal from '../components/Modal';
-import '../styles/Dashboard.css';
-import GenericModal from '../components/GenericModal';
-import SpotifyAuth from '../components/SpotifyAuth';
+import '../styles/Settings.css';
+import OriginalModal from '../components/OriginalModal';
 
-const Dashboard = () => {
+const Settings = () => {
     //below useEffect kicks in when we first load the change to check if a user is logged in, if not send to login page
     useEffect(() => {
         if (!userData.user) history.push('/login');
@@ -142,7 +141,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <GenericModal header='Alert!' message={status} onClear={statusHandler} />
+            <OriginalModal header='Alert!' message={status} onClear={statusHandler} />
 
             <Modal
                 show={showConfirmModal}
@@ -151,12 +150,11 @@ const Dashboard = () => {
                 footer={
                     <>
                         <button
-                            data-cy='cancel-delete-account'
                             onClick={cancelDeleteWarningHandler}
                         >
                             Cancel
                         </button>
-                        <button data-cy='delete-account-confirm' onClick={deleteAccount}>
+                        <button onClick={deleteAccount}>
                             Delete Account
                         </button>
                     </>
@@ -164,12 +162,7 @@ const Dashboard = () => {
             >
                 <p>Deleted accounts cannot be recovered</p>
             </Modal>
-            <h2 className='header'>Dashboard</h2>
-            <SpotifyAuth />
-            <p>
-                If you want to change the attached spotify account, or are having issues
-                with your Spotify, click here.
-            </p>
+            <h2 className='header'>Settings</h2>
             <div>
                 <form onSubmit={(e) => onSubmitUsername(e)} className='password-form'>
                     <label>Edit Username</label>
@@ -181,14 +174,12 @@ const Dashboard = () => {
                         value={newUsername}
                         onChange={(e) => usernameHandler(e)}
                         className='form-input'
-                        data-cy='edit-username'
                     />
 
                     <input
                         className='submit'
                         type='submit'
                         value='Change username'
-                        data-cy='change-username-button'
                     />
                 </form>
 
@@ -203,7 +194,6 @@ const Dashboard = () => {
                         onChange={(e) => passwordHandler(e)}
                         minLength='6'
                         className='form-input'
-                        data-cy='current-password'
                     />
                     <label>New Password</label>
                     <input
@@ -215,7 +205,6 @@ const Dashboard = () => {
                         onChange={(e) => passwordHandler(e)}
                         minLength='6'
                         className='form-input'
-                        data-cy='new-password'
                     />
                     <label>Confirm new password</label>
                     <input
@@ -227,20 +216,17 @@ const Dashboard = () => {
                         onChange={(e) => passwordHandler(e)}
                         minLength='6'
                         className='form-input'
-                        data-cy='new-password2'
                     />
                     <input
                         className='submit'
                         type='submit'
                         value='Change password'
-                        data-cy='change-password-button'
                     />
                 </form>
 
                 <button
                     className='delete'
                     onClick={showDeleteWarningHandler}
-                    data-cy='delete-account-button'
                 >
                     Delete Account
                 </button>
@@ -249,4 +235,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default Settings;

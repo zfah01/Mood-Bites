@@ -1,12 +1,12 @@
 import React from 'react';
-import '../styles/ErrorNotice.css';
+import '../styles/ErrorMessage.css';
 
-const ErrorNotice = (props) => {
+const ErrorMessage = (props) => {
     return (
-        // our error notice that takes in the props message and clearError
+        // The error notice that takes in the props message and clearError
 
         <div className='error-notice'>
-            {/* //message is our error */}
+            {/* //message is the error */}
             <span>{props.message}</span>
             {/* //and clearError will be a callback that sets the Error back to undefined. */}
             <button onClick={props.clearError}>X</button>
@@ -14,4 +14,4 @@ const ErrorNotice = (props) => {
     );
 };
 
-export default ErrorNotice;
+export default ErrorMessage;

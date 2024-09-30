@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect, useRef } from 'react';
 import SearchBar from './SearchBar';
 import UserContext from '../context/UserContext';
 import axios from 'axios';
-import RecipeTiles from '../components/RecipeTiles';
-import ErrorNotice from '../components/ErrorNotice';
+import RecipeOptions from './RecipeOptions';
+import ErrorMessage from './ErrorMessage';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import {Puff} from 'react-loader-spinner';
@@ -213,7 +213,7 @@ const SearchController = () => {
             {currentMood && <RecipeCarousel recipes={recommendedRecipes} saveRecipe={(index) => saveRecipe(index, true)} />}
 
             {error && (
-                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+                <ErrorMessage message={error} clearError={() => setError(undefined)} />
             )}
             {isLoading && (
                 <div className='loader'>
@@ -221,7 +221,7 @@ const SearchController = () => {
                 </div>
             )}
             <div ref={recipeTilesRef}>
-            <RecipeTiles saveRecipe={saveRecipe} recipes={currentRecipes} />
+            <RecipeOptions saveRecipe={saveRecipe} recipes={currentRecipes} />
             </div>
 
             {currentRecipes.length > 0 && (

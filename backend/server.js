@@ -4,12 +4,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Declare the routes we are going to use
-const userRouter = require('./routes/user_routes.js');
-const spotifyRouter = require('./routes/spotify_routes.js');
-const authRouter = require('./routes/auth_routes');
+const userRouter = require('./routes/routesUser.js');
+const authRouter = require('./routes/routesAuth');
 
-// Development routes that we don't want in prod.
-// const devRouter = require('./routes/dev_routes.js');
 
 // Tells the app to read from the .env file inr the root folder
 require('dotenv').config({ path: './.env' });
@@ -27,7 +24,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
 // Tells express where to use the routes we've declared earlier
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
-app.use('/spotify', spotifyRouter);
 
 // These are the dev routes that we don't want in our production env.
 // app.use('/dev/users', devRouter);

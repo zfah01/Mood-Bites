@@ -3,11 +3,11 @@ import axios from 'axios';
 import UserContext from '../context/UserContext';
 import { useHistory } from 'react-router-dom';
 
-import '../styles/DetailedRecipeView.css';
+import '../styles/FullRecipe.css';
 
 //shows detailed recipe info within ViewRecipe.js
 
-const DetailedRecipeView = ({ recipe }) => {
+const FullRecipe = ({ recipe }) => {
     const history = useHistory();
     const { userData, setUserData } = useContext(UserContext);
 
@@ -46,7 +46,6 @@ const DetailedRecipeView = ({ recipe }) => {
                 {/* button that calls deleteRecipe function */}
                 <button
                     className='recipe-delete'
-                    data-cy='deleteButton'
                     onClick={deleteRecipe}
                 >
                     Delete
@@ -117,5 +116,5 @@ const DetailedRecipeView = ({ recipe }) => {
     );
 };
 
-export default DetailedRecipeView;
+export default FullRecipe;
 

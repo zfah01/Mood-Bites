@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
-const AuthOptions = () => {
+const OptionsAuth = () => {
     const { userData, setUserData } = useContext(UserContext);
 
     const logout = () => {
@@ -16,7 +16,7 @@ const AuthOptions = () => {
         <div className='auth-options'>
             {/* if user in userData exists then render logout button through short-circuiting */}
             {userData.user && (
-                <button data-cy='logout-button' className='logout' onClick={logout}>
+                <button  className='logout' onClick={logout}>
                     Log out
                 </button>
             )}
@@ -24,4 +24,4 @@ const AuthOptions = () => {
     );
 };
 
-export default AuthOptions;
+export default OptionsAuth;

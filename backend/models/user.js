@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// This creates the user schema, where all our user data is held
+// The User Schema where all the user's data is held
 const User = new Schema({
     username: {
         type: String,
@@ -76,18 +76,6 @@ const User = new Schema({
             }
         }
     ],
-    spotifyTokens: {
-        // this one gets returned
-        access: {
-            type: String,
-            default: ''
-        },
-        // this one stays on the backend
-        refresh: {
-            type: String,
-            default: ''
-        }
-    },
     moodData: {
         happy: { type: Number, default: 0 },
         sad: { type: Number, default: 0 },

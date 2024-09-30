@@ -1,14 +1,13 @@
 import React, { useEffect, useContext, useState } from 'react';
-import UserRecipeTile from '../components/UserRecipeTile';
+import UserRecipeTile from '../components/UserRecipeOption';
 import UserContext from '../context/UserContext';
 import { useHistory } from 'react-router-dom';
-import SpotifyAuth from '../components/SpotifyAuth';
 import MoodTracker from '../components/MoodTracker';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 const Home = () => {
-    const { userData, spotifyAuth, recipeArray } = useContext(UserContext);
+    const { userData, recipeArray } = useContext(UserContext);
     const history = useHistory();
     const [page, setPage] = useState(0);
     const [moodData, setMoodData] = useState({
@@ -43,16 +42,6 @@ const Home = () => {
             <MoodTracker moodData={moodData} />
             <h2>Saved Recipes</h2>
             <br />
-            {!spotifyAuth && (
-                <>
-                    <p>
-                        To get the most out of this website, you'll want to:
-                    </p>
-                    <SpotifyAuth />
-                    <br/>
-                </>
-            )}
-
 
             {recipeArray.length > 0  ? (
                 <>

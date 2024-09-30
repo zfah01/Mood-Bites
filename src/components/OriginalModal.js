@@ -2,7 +2,7 @@ import React from 'react';
 
 import Modal from './Modal';
 
-const GenericModal = (props) => {
+const OriginalModal = (props) => {
     return (
         <div>
             <Modal
@@ -10,7 +10,7 @@ const GenericModal = (props) => {
                 header={props.header}
                 show={!!props.message}
                 footer={
-                    <button data-cy='modal-footer' onClick={props.onClear}>
+                    <button  onClick={props.onClear}>
                         Okay
                     </button>
                 }
@@ -21,4 +21,4 @@ const GenericModal = (props) => {
     );
 };
 
-export default GenericModal;
+export default OriginalModal;

@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/RecipeTile.css';
+import '../styles/RecipeOption.css';
 
 //renders list of searched recipes
-const RecipeTiles = ({ recipes, saveRecipe }) => {
+const RecipeOptions = ({ recipes, saveRecipe }) => {
     // takes in recipes (object) and saveRecipe = callback function to save a recipe
     return (
         <div className='recipe-results-container'>
@@ -31,7 +31,6 @@ const RecipeTiles = ({ recipes, saveRecipe }) => {
 
                     <button
                         // when button is clicked callback function saveRecipe is called on the specified index
-                        data-cy='save'
                         onClick={() => {
                             saveRecipe(index);
                         }}
@@ -45,4 +44,4 @@ const RecipeTiles = ({ recipes, saveRecipe }) => {
     );
 };
 
-export default RecipeTiles;
+export default RecipeOptions;

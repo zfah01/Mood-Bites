@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 const userModel = require('../models/user');
 const axios = require('axios');
 // These are the main routes of the app which let us change
-// the users ih the db. These are private and can only be accessed
+// the users in the db. These are private and can only be accessed
 // if a correct token is provided in the request header.
 
 // Delete an account given the correct id and token
@@ -120,30 +120,6 @@ router.put('/recipes/delete', auth, async (req, res) => {
     }
 });
 
-// route to add playlist to a user's recipe
-router.put('/recipes/add-playlist', auth, async (req, res) => {
-    try {
-        // find user and recipe from the req params, and throw error on fail
-        const user = await userModel.findById(req.body.id);
-        const recipeIndex = user.recipes.findIndex(
-            (recipe) => recipe.id == req.body.recipeId
-        );
-        if (recipeIndex === null) throw 'no recipe with given id found';
-
-        // set new playlist id onto recipe object
-        const newPlaylistRef = req.body.newPlaylistRef;
-        let newRecipes = [...user.recipes];
-        newRecipes[recipeIndex].playlistRef = newPlaylistRef;
-
-        // update user and send back new recipe array
-        await user.updateOne({ recipes: newRecipes });
-        res.status(200).send(newRecipes);
-    } catch (err) {
-        console.log('no adding this playlist, mon');
-        console.log(err.message);
-        res.status(400).send(err.message);
-    }
-});
 
 // Update mood data
 router.post('/mood', auth, async (req, res) => {

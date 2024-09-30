@@ -1,10 +1,9 @@
 // Rendered in App.js
 
 import React, { useContext, useEffect } from 'react';
-import PlaylistController from '../components/PlaylistController';
 import UserContext from '../context/UserContext';
 import { useHistory } from 'react-router-dom';
-import DetailedRecipeView from '../components/DetailedRecipeView';
+import FullRecipe from '../components/FullRecipe';
 
 // page for viewing the saved recipes, renders a detailed view of the recipe and playlist
 const ViewRecipe = ({ recipe }) => {
@@ -21,13 +20,9 @@ const ViewRecipe = ({ recipe }) => {
             {/* check if recipe prop exists then render the DetailRecipeView and playlist  */}
             {recipe && (
                 <div className='view-recipe'>
-                    <DetailedRecipeView recipe={recipe} />
+                    <FullRecipe recipe={recipe} />
                     <br />
                     <br />
-                    <PlaylistController
-                        recipe={recipe}
-                        playlistRef={recipe.playlistRef}
-                    />
                 </div>
             )}
         </div>

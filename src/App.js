@@ -15,9 +15,8 @@ import Home from './pages/Home';
 import AddRecipe from './pages/AddRecipe';
 import ViewRecipe from './pages/ViewRecipe';
 import Register from './pages/Register';
-import LoginForm from './pages/LoginForm';
-import SpotifyRoutingPage from './pages/SpotifyRoutingPage';
-import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Settings from './pages/Settings';
 import HelpButton from './components/HelpButton';
 
 //css
@@ -29,7 +28,6 @@ const App = () => {
         user: undefined,
         recipes: undefined,
     });
-    const [spotifyAuth, setSpotifyAuth] = useState(true);
     const [recipeArray, setRecipeArray] = useState([]);
 
     useEffect(() => {
@@ -52,26 +50,6 @@ const App = () => {
                         user: tokenRes.data._id,
                         recipes: tokenRes.data.recipes,
                     });
-                }
-
-                if (tokenRes.data.spotifyAuth) {
-                    axios
-                        .post(
-                            `http://localhost:5000/spotify/refresh`,
-                            { id: tokenRes.data._id },
-                            {
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'x-auth-token': tokenRes.data.token,
-                                },
-                            }
-                        )
-                        .then((data) => {
-                            // console.log(data.data.access_token);
-                            setSpotifyAuth(data.data.access_token);
-                        });
-                } else {
-                    setSpotifyAuth(false);
                 }
             };
             checkLoggedIn();
@@ -97,8 +75,6 @@ const App = () => {
                     value={{
                         userData,
                         setUserData,
-                        spotifyAuth,
-                        setSpotifyAuth,
                         recipeArray,
                         setRecipeArray,
                     }}
@@ -123,10 +99,9 @@ const App = () => {
                                 )}
                             />
 
-                            <Route exact path='/dashboard' component={Dashboard} />
+                            <Route exact path='/settings' component={Settings} />
                             <Route exact path='/register' component={Register} />
-                            <Route exact path='/login' component={LoginForm} />
-                            <Route path='/spotify-loading' component={SpotifyRoutingPage} />
+                            <Route exact path='/login' component={Login} />
 
                             <Redirect to='/' />
                         </Switch>

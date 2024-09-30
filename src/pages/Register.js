@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import axios from 'axios';
-import ErrorNotice from '../components/ErrorNotice';
+import ErrorMessage from '../components/ErrorMessage';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Register = () => {
         password2: ''
     });
 
-    const { userData, setUserData, setSpotifyAuth } = useContext(UserContext);
+    const { userData, setUserData } = useContext(UserContext);
     const { username, password, password2 } = formData;
     const [error, setError] = useState();
     const history = useHistory();
@@ -53,8 +53,6 @@ const Register = () => {
                     user: loginRes.data._id,
                     recipes: loginRes.data.recipes
                 });
-                // set spotifyAuth to false as new user
-                setSpotifyAuth(false);
                 // set the jwt token in local storage
                 localStorage.setItem('auth-token', loginRes.data.token);
                 history.push('/');
@@ -76,7 +74,7 @@ const Register = () => {
             <h1>Register</h1>
             {/* if error exists then render it */}
             {error && (
-                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+                <ErrorMessage message={error} clearError={() => setError(undefined)} />
             )}
 
             <p>Welcome to MoodBites, you'll have to sign-in (or sign-up)  before anything else. </p>
@@ -92,7 +90,6 @@ const Register = () => {
                     required
                     value={username}
                     onChange={(e) => onChange(e)}
-                    data-cy='register-username'
                 />
                 <label>Password</label>
                 <input
@@ -103,7 +100,6 @@ const Register = () => {
                     value={password}
                     onChange={(e) => onChange(e)}
                     minLength='6'
-                    data-cy='register-password'
                 />
                 <input
                     type='password'
@@ -113,14 +109,13 @@ const Register = () => {
                     value={password2}
                     onChange={(e) => onChange(e)}
                     minLength='6'
-                    data-cy='register-password2'
                 />
-                <input type='submit' value='Register' data-cy='register-button' />
+                <input type='submit' value='Register'  />
             </form>
             <p>
                 Already have an account? <span> </span>
                 {/* link to login route */}
-                <Link data-cy='login-link' to='/login'>
+                <Link  to='/login'>
                     Login
                 </Link>
             </p>
