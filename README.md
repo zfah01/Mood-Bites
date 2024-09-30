@@ -16,10 +16,10 @@ Enter "cd backend" then "node server.js"
 Enter "npm start"
 
 ## Application Flow:
-Sign Up or Login
-Search for Recipes, Ingredients, Dietary Requirements etc
-Select a Mood to receive recipes recommended based on mood. 
-Track Mood from Mood Tracker
-Click Favourite/Save to save a Recipe
-View Recipe in Full Detail
+#### Sign Up or Login
+#### Search for Recipes, Ingredients, Dietary Requirements etc
+#### Select a Mood to receive recipes recommended based on mood. 
+#### Track Mood from Mood Tracker
+#### Click Favourite/Save to save a Recipe
+#### View Recipe in Full Detail
 
