@@ -15,7 +15,7 @@ Enter "cd backend" then "node server.js"
 #### To run Frontend:
 Enter "npm start"
 
-##Application Flow:
+## Application Flow:
 
 Sign Up or Login
 Search for Recipes, Ingredients, Dietary Requirements etc
