@@ -1,0 +1,28 @@
+.mood-tracker {
+    text-align: center;
+    margin: 20px auto;
+    width: 700px;
+    height: 400px;
+}
+
+.mood-emojis {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between emojis */
+    font-size: 2rem; /* Size of emojis */
+}
+
+.mood-emojis span {
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.mood-emojis span:hover {
+    transform: scale(1.2); /* Slightly enlarge emoji on hover */
+}
+
+/* Optional styling for the chart container */
+.chart-container {
+    max-width: 600px; /* Set a max width for better responsiveness */
+    margin: auto; /* Center the chart */
+}

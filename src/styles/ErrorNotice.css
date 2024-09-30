@@ -1,0 +1,16 @@
+.error-notice {
+    border: 1px solid red;
+    padding: 0.3rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8cece;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.error-notice * {
+    background-color: #f8cece;
+    color: black;
+}

@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+h2, h3 {
+    color: #ff6f61;
+}
+
+input, select {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff5a49;
+}
+
+.dialog-title {
+    color: #ff6f61;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+.mood-tracker {
+    margin-top: 20px;
+}
+
+.mood-tracker p {
+    font-size: 1.2em;
+}
+
+.message {
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+.auth-container, .home-container {
+    margin: 50px auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 80%;
+}
+
+.recipe-results, .favourites-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,45 @@
+{
+  "happy": [
+    "chocolate", "ice cream", "cake", "cookie", "candy", "dessert", "sweet",
+    "fruit", "berry", "strawberry", "blueberry", "raspberry", "mango",
+    "pineapple", "peach", "watermelon", "smoothie", "milkshake",
+    "pancake", "waffle", "syrup", "honey", "caramel", "marshmallow",
+    "cupcake", "brownie", "pie", "pastry", "donut", "gelato", "sorbet"
+  ],
+  "energetic": [
+    "coffee", "espresso", "green tea", "matcha", "energy drink",
+    "protein", "protein bar", "protein shake", "nuts", "seeds", "granola",
+    "oats", "quinoa", "whole grain", "avocado", "banana", "apple",
+    "citrus", "orange", "lemon", "lime", "grapefruit", "kiwi",
+    "spinach", "kale", "broccoli", "vegetable juice", "smoothie bowl",
+    "acai bowl", "chia seeds", "flax seeds", "goji berries", "superfood"
+  ],
+  "relaxed": [
+    "tea", "herbal tea", "chamomile", "lavender", "mint", "green tea",
+    "soup", "broth", "stew", "comfort food", "mashed potato", "casserole",
+    "pasta", "risotto", "porridge", "oatmeal", "warm milk", "hot chocolate",
+    "honey", "cinnamon", "vanilla", "bread", "toast", "biscuit", "cookie",
+    "crackers", "cheese", "yogurt", "cottage cheese", "pudding"
+  ],
+  "stressed": [
+    "chocolate", "ice cream", "cake", "cookie", "candy", "chips", "crisps",
+    "fast food", "pizza", "burger", "fries", "fried chicken", "nachos",
+    "cheese", "mac and cheese", "grilled cheese", "pasta", "noodles",
+    "ramen", "sugar", "salt", "soda", "cola", "energy drink",
+    "alcohol", "wine", "beer", "cocktail", "shot", "liquor"
+  ],
+  "sad": [
+    "ice cream", "chocolate", "cake", "cookie", "candy", "comfort food",
+    "pizza", "burger", "fries", "mac and cheese", "pasta", "noodles",
+    "soup", "stew", "mashed potato", "fried food", "takeout", "delivery food",
+    "chips", "crisps", "popcorn", "soda", "cola", "milkshake", "pudding",
+    "pie", "brownie", "donut", "pastry", "alcohol", "wine", "beer"
+  ],
+  "neutral": [
+    "water", "bread", "rice", "pasta", "potato", "vegetable", "fruit",
+    "salad", "sandwich", "wrap", "soup", "stew", "grilled chicken",
+    "fish", "tofu", "egg", "cheese", "yogurt", "milk", "cereal",
+    "oatmeal", "granola", "nuts", "seeds", "beans", "lentils",
+    "quinoa", "couscous", "olive oil", "herbs", "spices"
+  ]
+}

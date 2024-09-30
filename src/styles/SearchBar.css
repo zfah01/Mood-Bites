@@ -1,0 +1,22 @@
+.searchbar {
+    background-color: #2d425a;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.4rem;
+}
+
+.searchbar label {
+    background-color: #2d425a;
+}
+.searchbar input {
+    background-color: white;
+    padding: 5px;
+    color: black;
+    width: 70%;
+}
+
+.searchbar ::placeholder {
+    color: black;
+    font-weight: 500;
+}
